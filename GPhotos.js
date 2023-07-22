@@ -260,7 +260,7 @@ class GPhotos {
       this.onAuthReady((client) => {
         let token = client.credentials.access_token;
         let list = [];
-        const getImage = async (pageSize = 50, pageToken = "") => {
+        const getImage = async (pageSize = 100, pageToken = "") => {
           this.log("Indexing photos now. total: ", list.length);
           try {
             let data = {
@@ -286,7 +286,7 @@ class GPhotos {
                 if (response.data.nextPageToken) {
                   const generous = async () => {
                     await sleep(500);
-                    getImage(50, response.data.nextPageToken);
+                    getImage(100, response.data.nextPageToken);
                   };
                   generous();
                 } else {
