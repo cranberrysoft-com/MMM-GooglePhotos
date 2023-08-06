@@ -268,7 +268,7 @@ class GPhotos {
               pageSize: pageSize,
               pageToken: pageToken,
             };
-            console.log("Requesting %j", jsonObj);
+            console.log("Requesting %j", data);
             let response = await this.request(token, "mediaItems:search", "post", null, data);
             if (response.data.hasOwnProperty("mediaItems") && Array.isArray(response.data.mediaItems)) {
               for (let item of response.data.mediaItems) {
