@@ -238,7 +238,7 @@ class GPhotos {
      * @param {string} pageToken
      * @returns {Promise<MediaItem[]>} MediaItem
      */
-    const getImage = async (pageSize = 50, pageToken = "") => {
+    const getImage = async (pageSize = 100, pageToken = "") => {
       // this.log("Indexing photos now. total: ", list.length);
       try {
         let data = {
