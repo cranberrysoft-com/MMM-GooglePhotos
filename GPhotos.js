@@ -263,7 +263,7 @@ class GPhotos {
           } else {
             if (response.data.nextPageToken) {
               await sleep(500);
-              return getImage(pageSize, response.data.nextPageToken);
+              return getImage(100, response.data.nextPageToken);
             } else {
               return list; // all found but lesser than maxNum
             }
